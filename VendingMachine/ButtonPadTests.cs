@@ -64,5 +64,15 @@ namespace VendingMachine
             Assert.That(buttonPad.GetCurrentSelection(), Is.EqualTo(""));
         }
 
+        [Test]
+        public void ClearTransactionShoudRunClearTransactionAction()
+        {
+            bool clearTransactionRun = false;
+            var buttonPad = new ButtonPad(() => { clearTransactionRun = true; });
+            buttonPad.ClearTransaction.Press();
+            Assert.That(clearTransactionRun, Is.True);
+            
+        }
+
     }
 }
