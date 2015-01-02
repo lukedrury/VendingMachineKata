@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Button.cs" />
     <Compile Include="ButtonPad.cs" />
     <Compile Include="ButtonPadTests.cs" />
+    <Compile Include="IButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Selection.cs" />
     <Compile Include="SelectionTests.cs" />

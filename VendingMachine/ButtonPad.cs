@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace VendingMachine
+﻿namespace VendingMachine
 {
     public class ButtonPad
     {
@@ -12,26 +10,6 @@ namespace VendingMachine
         public readonly IButton Five;
         public readonly IButton Six;
         public readonly IButton ClearSelection;
-
-        public interface IButton
-        {
-            void Press();
-        }
-
-        private class Button : IButton
-        {
-            private readonly Action m_ButtonAction;
-
-            public Button(Action buttonAction)
-            {
-                m_ButtonAction = buttonAction;
-            }
-
-            public void Press()
-            {
-                m_ButtonAction();
-            }
-        }
 
         public ButtonPad()
         {
