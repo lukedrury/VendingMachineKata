@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace VendingMachine
@@ -26,10 +27,8 @@ namespace VendingMachine
 
         private void TruncateToLength(int length)
         {
-            while (m_CurrentSelection.Count > length)
-            {
-                m_CurrentSelection.RemoveAt(0);
-            }
+            int countOfNumbersToRemove = Math.Max(m_CurrentSelection.Count - length, 0);
+            m_CurrentSelection.RemoveRange(0, countOfNumbersToRemove);
         }
 
         public void Clear()

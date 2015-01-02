@@ -47,7 +47,7 @@ namespace VendingMachine
         {
             var selection = new Selection();
             selection.AddToSelection(3);
-            selection.Reset();
+            selection.Clear();
             Assert.That(selection.CurrentSelection, Is.EqualTo(""));
         }
     }
