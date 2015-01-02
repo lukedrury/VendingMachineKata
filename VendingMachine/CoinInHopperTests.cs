@@ -18,5 +18,15 @@ namespace VendingMachine
             hopper.Insert(Coin.New5p());
             Assert.That(hopper.TotalInserted, Is.EqualTo(5));
         }
+
+        [Test]
+        public void SeveralCoinShouldShowInTotal()
+        {
+            var hopper = new CoinInHopper();
+            hopper.Insert(Coin.New5p());
+            hopper.Insert(Coin.New10p());
+            hopper.Insert(Coin.New50p());
+            Assert.That(hopper.TotalInserted, Is.EqualTo(65));
+        }
     }
 }
