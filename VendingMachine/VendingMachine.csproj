@@ -48,6 +48,7 @@
     <Compile Include="Coin.cs" />
     <Compile Include="CoinInHopper.cs" />
     <Compile Include="CoinInHopperTests.cs" />
+    <Compile Include="CoinTests.cs" />
     <Compile Include="IButton.cs" />
     <Compile Include="ICoin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
