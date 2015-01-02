@@ -55,5 +55,14 @@ namespace VendingMachine
             Assert.That(buttonPad.GetCurrentSelection(), Is.EqualTo("6"));
         }
 
+        [Test]
+        public void ClearSelectionButtonShouldClearSelection()
+        {
+            var buttonPad = new ButtonPad();
+            buttonPad.Six.Press();
+            buttonPad.ClearSelection.Press();
+            Assert.That(buttonPad.GetCurrentSelection(), Is.EqualTo(""));
+        }
+
     }
 }

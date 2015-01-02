@@ -11,6 +11,7 @@ namespace VendingMachine
         public readonly IButton Four;
         public readonly IButton Five;
         public readonly IButton Six;
+        public readonly IButton ClearSelection;
 
         public interface IButton
         {
@@ -40,6 +41,7 @@ namespace VendingMachine
             Four = new Button(() => m_Selection.AddToSelection(4));
             Five = new Button(() => m_Selection.AddToSelection(5));
             Six = new Button(() => m_Selection.AddToSelection(6));
+            ClearSelection = new Button(() => m_Selection.Clear());
         }
 
         public string GetCurrentSelection()
