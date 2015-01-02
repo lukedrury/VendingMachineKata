@@ -1,19 +1,35 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Text;
 
 namespace VendingMachine
 {
     public class Selection
     {
-        private readonly StringBuilder m_CurrentSelection = new StringBuilder();
+        private readonly List<int> m_CurrentSelection = new List<int>();
+        private const int c_SelectionLength = 3;
 
         public void AddToSelection(int number)
         {
-            m_CurrentSelection.Append(number);
+            m_CurrentSelection.Add(number);
+            TruncateToLength(c_SelectionLength);
         }
 
         public string CurrentSelection
         {
-            get { return m_CurrentSelection.ToString(); }
+            get
+            {
+                var s = new StringBuilder();
+                m_CurrentSelection.ForEach(i => s.Append(i));
+                return s.ToString();
+            }
+        }
+
+        private void TruncateToLength(int length)
+        {
+            while (m_CurrentSelection.Count > length)
+            {
+                m_CurrentSelection.RemoveAt(0);
+            }
         }
     }
 }
