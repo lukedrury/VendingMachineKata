@@ -41,5 +41,14 @@ namespace VendingMachine
             selection.AddToSelection(9);
             Assert.That(selection.CurrentSelection, Is.EqualTo("579")); 
         }
+
+        [Test]
+        public void ResetShouldSetSelectionBackToEmpty()
+        {
+            var selection = new Selection();
+            selection.AddToSelection(3);
+            selection.Reset();
+            Assert.That(selection.CurrentSelection, Is.EqualTo(""));
+        }
     }
 }

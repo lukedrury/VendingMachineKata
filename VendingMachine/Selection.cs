@@ -31,5 +31,10 @@ namespace VendingMachine
                 m_CurrentSelection.RemoveAt(0);
             }
         }
+
+        public void Clear()
+        {
+            m_CurrentSelection.Clear();
+        }
     }
 }
