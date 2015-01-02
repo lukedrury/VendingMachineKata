@@ -45,6 +45,8 @@
     <Compile Include="ButtonPad.cs" />
     <Compile Include="ButtonPadTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Selection.cs" />
+    <Compile Include="SelectionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
