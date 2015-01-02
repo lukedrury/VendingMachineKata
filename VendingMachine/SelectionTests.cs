@@ -19,5 +19,16 @@ namespace VendingMachine
             Assert.That(selection.CurrentSelection, Is.EqualTo("3"));
             
         }
+
+        [Test]
+        public void ThreeNumbersShouldShowInSelection()
+        {
+            var selection = new Selection();
+            selection.AddToSelection(3);
+            selection.AddToSelection(5);
+            selection.AddToSelection(7);
+            Assert.That(selection.CurrentSelection, Is.EqualTo("357"));
+
+        }
     }
 }
