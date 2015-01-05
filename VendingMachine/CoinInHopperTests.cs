@@ -20,7 +20,7 @@ namespace VendingMachine
         }
 
         [Test]
-        public void SeveralCoinShouldShowInTotal()
+        public void SeveralCoinsShouldShowInTotal()
         {
             var hopper = new CoinInHopper();
             hopper.Insert(Coin.New5p());
