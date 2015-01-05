@@ -12,13 +12,15 @@ namespace VendingMachine
 
         public VendingMachine()
         {
-            m_Display = new Display {Row1 = "Ready"};
+            m_Display = new Display();
             m_ButtonPad = new ButtonPad(Reset, OnSelectionChanged);
+            OnSelectionChanged();
         }
 
         private void OnSelectionChanged()
         {
-            m_Display.Row1 = m_ButtonPad.GetCurrentSelection();
+            var currentSelection = m_ButtonPad.GetCurrentSelection();
+            m_Display.Row1 = String.IsNullOrEmpty(currentSelection) ? "Ready" : currentSelection;
         }
 
         private void Reset()

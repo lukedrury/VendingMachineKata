@@ -20,5 +20,16 @@ namespace VendingMachine
             machine.ButtonPad.Three.Press();
             Assert.That(machine.Display.Row1, Is.EqualTo("123"));
         }
+
+        [Test]
+        public void MachineShouldClearSelection()
+        {
+            var machine = new VendingMachine();
+            machine.ButtonPad.One.Press();
+            machine.ButtonPad.Two.Press();
+            machine.ButtonPad.Three.Press();
+            machine.ButtonPad.ClearSelection.Press();
+            Assert.That(machine.Display.Row1, Is.EqualTo("Ready"));            
+        }
     }
 }
