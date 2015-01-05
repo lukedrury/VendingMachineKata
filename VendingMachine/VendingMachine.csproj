@@ -49,11 +49,15 @@
     <Compile Include="CoinInHopper.cs" />
     <Compile Include="CoinInHopperTests.cs" />
     <Compile Include="CoinTests.cs" />
+    <Compile Include="Display.cs" />
     <Compile Include="IButton.cs" />
     <Compile Include="ICoin.cs" />
+    <Compile Include="IDisplay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Selection.cs" />
     <Compile Include="SelectionTests.cs" />
+    <Compile Include="VendingMachine.cs" />
+    <Compile Include="VendingMachineTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
