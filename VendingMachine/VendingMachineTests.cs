@@ -31,5 +31,13 @@ namespace VendingMachine
             machine.ButtonPad.ClearSelection.Press();
             Assert.That(machine.Display.Row1, Is.EqualTo("Ready"));            
         }
+
+        [Test]
+        public void MachineShouldShowAmountPaid()
+        {
+            var machine = new VendingMachine();
+            machine.CoinSlot.Insert(Coin.New10p());
+            Assert.That(machine.Display.Row2, Is.EqualTo("10p"));
+        }
     }
 }
