@@ -14,15 +14,15 @@ namespace VendingMachine
         public readonly IButton ClearSelection;
         public readonly IButton ClearTransaction;
 
-        public ButtonPad(Action clearTransaction)
+        public ButtonPad(Action clearTransaction, Action selectionChangedAction)
         {
-            One = new Button(() => m_Selection.AddToSelection(1));
-            Two = new Button(() => m_Selection.AddToSelection(2));
-            Three = new Button(() => m_Selection.AddToSelection(3));
-            Four = new Button(() => m_Selection.AddToSelection(4));
-            Five = new Button(() => m_Selection.AddToSelection(5));
-            Six = new Button(() => m_Selection.AddToSelection(6));
-            ClearSelection = new Button(() => m_Selection.Clear());
+            One = new Button(() => {m_Selection.AddToSelection(1); selectionChangedAction();});
+            Two = new Button(() => {m_Selection.AddToSelection(2); selectionChangedAction();});
+            Three = new Button(() => {m_Selection.AddToSelection(3); selectionChangedAction();});
+            Four = new Button(() => {m_Selection.AddToSelection(4); selectionChangedAction();});
+            Five = new Button(() => {m_Selection.AddToSelection(5); selectionChangedAction();});
+            Six = new Button(() => {m_Selection.AddToSelection(6); selectionChangedAction();});
+            ClearSelection = new Button(() => {m_Selection.Clear(); selectionChangedAction();});
             ClearTransaction = new Button(clearTransaction);
         }
 
