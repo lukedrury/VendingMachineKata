@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace VendingMachine
 {
-    class CoinInHopper : ICoinSlot
+    class CoinInHopper
     {
         public CoinInHopper(Action coinInsertedAction)
         {
