@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace VendingMachine
+namespace VendingMachine.Tests
 {
     public class ButtonPadTests
     {
